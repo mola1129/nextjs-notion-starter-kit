@@ -19,7 +19,7 @@ export const Footer: React.FC<{
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyright}>Copyright 2021 Travis Fischer</div>
+      <div className={styles.copyright}>Copyright 2021 mola1129</div>
 
       <div className={styles.settings}>
         {!config.isServer && (
