@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://transitivebullsh.it/nextjs-notion-starter-kit">
-    <img alt="Example article page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252Fdf65065d-c53b-4d2a-978c-594d1806a2c4%252Fmain-article-desktop-opt.jpg%3Ftable%3Dblock%26id%3D5b87b717-ca5b-49da-b17c-12c3eab1644a%26cache%3Dv2" width="689">
+    <img alt="Example article page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252Fd147d76c-28a4-4cdd-a503-2d6bcc50a787%252Ftransitivebullsh.it__(5)-opt.jpg%3Ftable%3Dblock%26id%3D5b87b717-ca5b-49da-b17c-12c3eab1644a%26cache%3Dv2" width="689">
   </a>
 </p>
 
@@ -14,7 +14,7 @@
 
 This repo is what I use to power my personal blog / portfolio site [transitivebullsh.it](https://transitivebullsh.it).
 
-It uses Notion as a CMS, fetching content from a [root Notion doc](https://notion.so/78fc5a4b88d74b0e824e29407e9f1ec1) and then uses [Next.js](https://nextjs.org/) and [react-notion-x](https://github.com/NotionX/react-notion-x) to render everything.
+It uses Notion as a CMS, fetching content from Notion and then uses [Next.js](https://nextjs.org/) and [react-notion-x](https://github.com/NotionX/react-notion-x) to render everything.
 
 The site is then deployed to [Vercel](http://vercel.com).
 
@@ -42,13 +42,15 @@ The site is then deployed to [Vercel](http://vercel.com).
 2. Change a few values in [site.config.js](./site.config.js)
 3. `npm install`
 4. `npm run dev` to test locally
-5. `run run deploy` to deploy to vercel 💪
+5. `npm run deploy` to deploy to vercel 💪
 
-I tried to make configuration as easy as possible -- all you really need to change to get started is edit `rootNotionPageId`.
+I tried to make configuration as easy as possible.
 
-You'll want to make your root Notion page **public** and then copy the link to your clipboard. Now just extract the last part of the URL that looks like `d1b5dcf8b9ff425b8aef5ce6f0730202` as your root Notion page iD.
+All you really need to do to get started is edit `rootNotionPageId`. It defaults to rendering my site's public notion page [78fc5a4b88d74b0e824e29407e9f1ec1](https://notion.so/78fc5a4b88d74b0e824e29407e9f1ec1).
 
-I recommend setting up a collection on your home page (I used an inline gallery [here](https://notion.so/78fc5a4b88d74b0e824e29407e9f1ec1)) that contains all of your articles / projects / content. There are no structural constraints on your Notion workspace, however, so feel free to add content as you would normally in Notion. There are a few parts of the code with logic to only show comments on blog post pages (collection item detail pages).
+You'll want to make your root Notion page **public** and then copy the link to your clipboard. Then extract the last part of the URL that looks like `d1b5dcf8b9ff425b8aef5ce6f0730202`, which is your page's Notion iD.
+
+I recommend setting up a collection on your home page (I use an inline gallery [here](https://notion.so/78fc5a4b88d74b0e824e29407e9f1ec1)) that contains all of your articles / projects / content. There are no structural constraints on your Notion workspace, however, so feel free to add content as you would normally in Notion. There are a few parts of the code with logic to only show comments on blog post pages (collection item detail pages).
 
 ## URL Paths
 
@@ -72,7 +74,15 @@ They mainly target global CSS classes exported by react-notion-x [styles.css](ht
 
 It should be pretty easy to customize most styling-related things, especially with local development and hot reload.
 
-Dark mode is fully supported by `react-notion-x`, but it not not yet customizable via the UI. You can add `?dark=true` to play around with it.
+### Dark Mode
+
+<p align="center">
+  <img alt="Light Mode" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252F83ea9f0f-4761-4c0b-b53e-1913627975fc%252Ftransitivebullsh.it_-opt.jpg%3Ftable%3Dblock%26id%3Ded7e8f60-c6d1-449e-840b-5c7762505c44%26cache%3Dv2" width="45%"> 
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark Mode" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252Fc0839d6c-7141-48df-8afd-69b27fed84aa%252Ftransitivebullsh.it__(1)-opt.jpg%3Ftable%3Dblock%26id%3D23b11fe5-d6df-422d-9674-39cf7f547523%26cache%3Dv2" width="45%">
+</p>
+
+Dark mode is fully supported and can be toggled via the sun / moon icon in the footer.
 
 ## Extras
 
@@ -91,6 +101,10 @@ To enable analytics, just add a `NEXT_PUBLIC_FATHOM_ID` environment variable.
 This environment variable will only be taken into account in production, so you don't have to worry about messing up your analytics with localhost development.
 
 ### GitHub Comments
+
+<p align="center">
+  <img alt="Embedded GitHub Comments" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252Fa43f996c-de07-4d8a-8461-b35f9d43e4b2%252Fcomments-desktop-opt.jpg%3Ftable%3Dblock%26id%3Ded07d7c2-57c9-4aba-81b3-f5fa069371d4%26cache%3Dv2" width="420">
+</p>
 
 [Utteranc.es](https://utteranc.es/) is an amazing [open source project](https://github.com/utterance/utterances) which enables developers to embed GitHub issues as a comments section on their websites. Genius.
 
@@ -122,7 +136,7 @@ The actual work happens in the [create-preview-image](./api/create-preview-image
 ### Automatic Social Images
 
 <p align="center">
-  <img alt="Auto-generated social image" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252Fe1877c31-0bc9-46b7-8aaf-7bcae21baf2b%252Fsocial-image-opt.jpeg%3Ftable%3Dblock%26id%3D735b04d2-2a77-4035-8942-a17f8d41fe83%26cache%3Dv2" width="600">
+  <img alt="Auto-generated social image" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252Fe1877c31-0bc9-46b7-8aaf-7bcae21baf2b%252Fsocial-image-opt.jpeg%3Ftable%3Dblock%26id%3D735b04d2-2a77-4035-8942-a17f8d41fe83%26cache%3Dv2" width="420">
 </p>
 
 Open Graph images like this one will be generated for each page of your site automatically based each page's content.
@@ -154,29 +168,29 @@ This table of contents uses the same logic that Notion uses for its built-in Tab
 
 ## Screenshots
 
-### Mobile Home Page
-
-<a href="https://transitivebullsh.it">
-  <img alt="Mobile Home Page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252F8ee728ab-d77e-411b-ab37-ce71b25dddfb%252Fhome-mobile-opt.jpg%3Ftable%3Dblock%26id%3Dbb5cb99f-f3fe-4060-8c42-05ff80c26f38%26cache%3Dv2" width="300">
-</a>
-
 ### Mobile Article Page
 
-<a href="https://transitivebullsh.it/free-resources-for-indie-saas-devs">
-  <img alt="Mobile Article Page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252F6c05a0f9-59a0-4322-bef9-3f08fe4efc6a%252Farticle-mobile-opt.jpg%3Ftable%3Dblock%26id%3Da1eb2263-fdf1-4d51-a3d4-8a02cb32bbba%26cache%3Dv2" width="300">
-</a>
+<p align="center">
+  <a href="https://transitivebullsh.it/free-resources-for-indie-saas-devs">
+    <img alt="Mobile Article Page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252F6c05a0f9-59a0-4322-bef9-3f08fe4efc6a%252Farticle-mobile-opt.jpg%3Ftable%3Dblock%26id%3Da1eb2263-fdf1-4d51-a3d4-8a02cb32bbba%26cache%3Dv2" width="300">
+  </a>
+</p>
 
 ### Desktop Home Page
 
-<a href="https://transitivebullsh.it">
-  <img alt="Desktop Home Page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252F657b2c1b-c548-4a05-b6b7-09c6fe2f65b0%252Fhome-desktop-opt.jpg%3Ftable%3Dblock%26id%3D97f445e8-2da1-41cd-996a-5ad0e73a1d79%26cache%3Dv2" width="600">
-</a>
+<p align="center">
+  <a href="https://transitivebullsh.it">
+    <img alt="Desktop Home Page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252F1d3ab4b2-60af-4b95-b35d-cac5d440b8ca%252Ftransitivebullsh.it_-opt.jpg%3Ftable%3Dblock%26id%3D97f445e8-2da1-41cd-996a-5ad0e73a1d79%26cache%3Dv2" width="600">
+  </a>
+</p>
 
-### Desktop Article Page
+### Desktop Article Page (Dark Mode)
 
-<a href="https://transitivebullsh.it/free-resources-for-indie-saas-devs">
-  <img alt="Desktop Article Page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252F236cc4f2-4a85-4eb6-8f6a-4b835ccf63dd%252Farticle-desktop-opt.jpg%3Ftable%3Dblock%26id%3D16e03de2-0df7-4232-a129-e1666505c4d2%26cache%3Dv2" width="600">
-</a>
+<p align="center">
+  <a href="https://transitivebullsh.it/free-resources-for-indie-saas-devs">
+    <img alt="Desktop Article Page" src="https://ssfy.io/https%3A%2F%2Fwww.notion.so%2Fimage%2Fhttps%253A%252F%252Fs3-us-west-2.amazonaws.com%252Fsecure.notion-static.com%252Fb564d13f-b71b-4473-8531-65b5dd9b995f%252Ftransitivebullsh.it__(4)-opt.jpg%3Ftable%3Dblock%26id%3D16e03de2-0df7-4232-a129-e1666505c4d2%26cache%3Dv2" width="600">
+  </a>
+</p>
 
 ## License
 
