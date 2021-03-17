@@ -7,13 +7,13 @@ module.exports = {
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Mola1129',
+  name: 'Mola1129 Blog',
   domain: 'mola1129.dev',
   author: 'mola1129',
 
   // open graph metadata (optional)
-  description: 'mola1129',
-  socialImageTitle: 'mola1129',
+  description: 'Mola1129 Blog',
+  socialImageTitle: 'Mola1129 Blog',
   socialImageSubtitle: 'mola1129! 👋',
 
   // social usernames (optional)
@@ -32,7 +32,7 @@ module.exports = {
   imageCDNHost: null,
 
   // Utteranc.es comments via GitHub issue comments (optional)
-  utterancesGitHubRepo: null,
+  utterancesGitHubRepo: 'mola1129/nextjs-notion-starter-kit',
 
   // whether or not to enable support for LQIP preview images (optional)
   // NOTE: this requires you to set up Google Firebase and add the environment
